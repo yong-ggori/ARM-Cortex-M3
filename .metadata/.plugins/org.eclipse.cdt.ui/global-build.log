@@ -1,21 +1,105 @@
-18:40:35 **** Build of configuration Debug for project test ****
+16:20:49 **** Incremental Build of configuration Debug for project EXTI_multiLED ****
 make -j8 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
-arm-none-eabi-gcc -o "test.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\KCCI26\STM32CubeIDE\workspace_1.9.0\test\STM32F103RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="test.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: test.elf
+arm-none-eabi-gcc -o "EXTI_multiLED.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\KCCI26\STM32CubeIDE\workspace_1.9.0\EXTI_multiLED\STM32F103RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="EXTI_multiLED.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: EXTI_multiLED.elf
  
-arm-none-eabi-size   test.elf 
-arm-none-eabi-objdump -h -S  test.elf  > "test.list"
+arm-none-eabi-size   EXTI_multiLED.elf 
+arm-none-eabi-objdump -h -S  EXTI_multiLED.elf  > "EXTI_multiLED.list"
    text	   data	    bss	    dec	    hex	filename
-   5676	     20	   1636	   7332	   1ca4	test.elf
+   6024	     20	   1644	   7688	   1e08	EXTI_multiLED.elf
 Finished building: default.size.stdout
  
-Finished building: test.list
+Finished building: EXTI_multiLED.list
  
-18:40:46 **** Incremental Build of configuration Debug for project test ****
+16:20:54 **** Incremental Build of configuration Debug for project EXTI_multiLED ****
 make -j8 all 
-arm-none-eabi-size   test.elf 
+arm-none-eabi-size   EXTI_multiLED.elf 
    text	   data	    bss	    dec	    hex	filename
-   5676	     20	   1636	   7332	   1ca4	test.elf
+   6024	     20	   1644	   7688	   1e08	EXTI_multiLED.elf
 Finished building: default.size.stdout
+ 
+16:21:43 **** Incremental Build of configuration Debug for project EXTI_multiLED ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "EXTI_multiLED.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\KCCI26\STM32CubeIDE\workspace_1.9.0\EXTI_multiLED\STM32F103RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="EXTI_multiLED.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: EXTI_multiLED.elf
+ 
+arm-none-eabi-size   EXTI_multiLED.elf 
+arm-none-eabi-objdump -h -S  EXTI_multiLED.elf  > "EXTI_multiLED.list"
+   text	   data	    bss	    dec	    hex	filename
+   6016	     20	   1644	   7680	   1e00	EXTI_multiLED.elf
+Finished building: default.size.stdout
+ 
+Finished building: EXTI_multiLED.list
+ 
+16:25:56 **** Incremental Build of configuration Debug for project EXTI_multiLED ****
+make -j8 all 
+arm-none-eabi-size   EXTI_multiLED.elf 
+   text	   data	    bss	    dec	    hex	filename
+   6016	     20	   1644	   7680	   1e00	EXTI_multiLED.elf
+Finished building: default.size.stdout
+ 
+16:26:11 **** Incremental Build of configuration Debug for project EXTI_multiLED ****
+make -j8 all 
+arm-none-eabi-size   EXTI_multiLED.elf 
+   text	   data	    bss	    dec	    hex	filename
+   6016	     20	   1644	   7680	   1e00	EXTI_multiLED.elf
+Finished building: default.size.stdout
+ 
+16:34:11 **** Incremental Build of configuration Debug for project EXTI_multiLED ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "EXTI_multiLED.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\KCCI26\STM32CubeIDE\workspace_1.9.0\EXTI_multiLED\STM32F103RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="EXTI_multiLED.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: EXTI_multiLED.elf
+ 
+arm-none-eabi-size   EXTI_multiLED.elf 
+arm-none-eabi-objdump -h -S  EXTI_multiLED.elf  > "EXTI_multiLED.list"
+   text	   data	    bss	    dec	    hex	filename
+   6008	     20	   1644	   7672	   1df8	EXTI_multiLED.elf
+Finished building: default.size.stdout
+ 
+Finished building: EXTI_multiLED.list
+ 
+16:50:21 **** Incremental Build of configuration Debug for project EXTI_multiLED ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "EXTI_multiLED.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\KCCI26\STM32CubeIDE\workspace_1.9.0\EXTI_multiLED\STM32F103RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="EXTI_multiLED.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: EXTI_multiLED.elf
+ 
+arm-none-eabi-size   EXTI_multiLED.elf 
+arm-none-eabi-objdump -h -S  EXTI_multiLED.elf  > "EXTI_multiLED.list"
+   text	   data	    bss	    dec	    hex	filename
+   6056	     20	   1644	   7720	   1e28	EXTI_multiLED.elf
+Finished building: default.size.stdout
+ 
+Finished building: EXTI_multiLED.list
+ 
+16:51:52 **** Incremental Build of configuration Debug for project EXTI_multiLED ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "EXTI_multiLED.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\KCCI26\STM32CubeIDE\workspace_1.9.0\EXTI_multiLED\STM32F103RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="EXTI_multiLED.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: EXTI_multiLED.elf
+ 
+arm-none-eabi-size   EXTI_multiLED.elf 
+arm-none-eabi-objdump -h -S  EXTI_multiLED.elf  > "EXTI_multiLED.list"
+   text	   data	    bss	    dec	    hex	filename
+   6064	     20	   1644	   7728	   1e30	EXTI_multiLED.elf
+Finished building: default.size.stdout
+ 
+Finished building: EXTI_multiLED.list
+ 
+16:52:37 **** Incremental Build of configuration Debug for project EXTI_multiLED ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "EXTI_multiLED.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\KCCI26\STM32CubeIDE\workspace_1.9.0\EXTI_multiLED\STM32F103RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="EXTI_multiLED.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: EXTI_multiLED.elf
+ 
+arm-none-eabi-size   EXTI_multiLED.elf 
+arm-none-eabi-objdump -h -S  EXTI_multiLED.elf  > "EXTI_multiLED.list"
+   text	   data	    bss	    dec	    hex	filename
+   6052	     20	   1644	   7716	   1e24	EXTI_multiLED.elf
+Finished building: default.size.stdout
+ 
+Finished building: EXTI_multiLED.list
  
