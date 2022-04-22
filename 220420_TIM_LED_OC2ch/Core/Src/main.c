@@ -1,20 +1,20 @@
 /* USER CODE BEGIN Header */
 /**
-  ******************************************************************************
-  * @file           : main.c
-  * @brief          : Main program body
-  ******************************************************************************
-  * @attention
-  *
-  * Copyright (c) 2022 STMicroelectronics.
-  * All rights reserved.
-  *
-  * This software is licensed under terms that can be found in the LICENSE file
-  * in the root directory of this software component.
-  * If no LICENSE file comes with this software, it is provided AS-IS.
-  *
-  ******************************************************************************
-  */
+ ******************************************************************************
+ * @file           : main.c
+ * @brief          : Main program body
+ ******************************************************************************
+ * @attention
+ *
+ * Copyright (c) 2022 STMicroelectronics.
+ * All rights reserved.
+ *
+ * This software is licensed under terms that can be found in the LICENSE file
+ * in the root directory of this software component.
+ * If no LICENSE file comes with this software, it is provided AS-IS.
+ *
+ ******************************************************************************
+ */
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
@@ -92,22 +92,24 @@ int main(void)
   MX_USART2_UART_Init();
   MX_TIM2_Init();
   /* USER CODE BEGIN 2 */
-  if(HAL_TIM_Base_Start_IT(&htim2) != HAL_OK){
-	  Error_Handler();
-  }
-  if(HAL_TIM_OC_Start_IT(&htim2, TIM_CHANNEL_1 | TIM_CHANNEL_2) != HAL_OK){
-	  Error_Handler();
-  }
+	if (HAL_TIM_Base_Start_IT(&htim2) != HAL_OK) {
+		Error_Handler();
+	}
+	if (HAL_TIM_OC_Start_IT(&htim2, TIM_CHANNEL_1) != HAL_OK) {
+		Error_Handler();
+	}
+	if (HAL_TIM_OC_Start_IT(&htim2, TIM_CHANNEL_2) != HAL_OK) {
+		Error_Handler();
+	}
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  while (1)
-  {
+	while (1) {
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-  }
+	}
   /* USER CODE END 3 */
 }
 
@@ -171,7 +173,7 @@ static void MX_TIM2_Init(void)
   htim2.Instance = TIM2;
   htim2.Init.Prescaler = 6400-1;
   htim2.Init.CounterMode = TIM_COUNTERMODE_UP;
-  htim2.Init.Period = 10000-1;
+  htim2.Init.Period = 100-1;
   htim2.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
   htim2.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
   if (HAL_TIM_Base_Init(&htim2) != HAL_OK)
@@ -194,7 +196,7 @@ static void MX_TIM2_Init(void)
     Error_Handler();
   }
   sConfigOC.OCMode = TIM_OCMODE_TIMING;
-  sConfigOC.Pulse = 10000-1;
+  sConfigOC.Pulse = 100-1;
   sConfigOC.OCPolarity = TIM_OCPOLARITY_HIGH;
   sConfigOC.OCFastMode = TIM_OCFAST_DISABLE;
   if (HAL_TIM_OC_ConfigChannel(&htim2, &sConfigOC, TIM_CHANNEL_1) != HAL_OK)
@@ -313,14 +315,32 @@ static void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
-void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
-	HAL_GPIO_WritePin(GPIOC, GPIO_PIN_0 | GPIO_PIN_1 | GPIO_PIN_6 | GPIO_PIN_7, GPIO_PIN_SET);
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {
+	HAL_GPIO_WritePin(GPIOC, GPIO_PIN_0 | GPIO_PIN_1 | GPIO_PIN_6 | GPIO_PIN_7,
+			GPIO_PIN_SET);
 }
-void HAL_TIM_OC_DelayElapsedCallback(TIM_HandleTypeDef *htim){
-
+void HAL_TIM_OC_DelayElapsedCallback(TIM_HandleTypeDef *htim) { //OC channel 1, 2 IT
+	if (htim->Channel == HAL_TIM_ACTIVE_CHANNEL_1) {
+		HAL_GPIO_WritePin(GPIOC, GPIO_PIN_0 | GPIO_PIN_1, GPIO_PIN_RESET);
+	}
+	if (htim->Channel == HAL_TIM_ACTIVE_CHANNEL_2) {
+		HAL_GPIO_WritePin(GPIOC, GPIO_PIN_6 | GPIO_PIN_7, GPIO_PIN_RESET);
+	}
 }
-void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin){
-
+void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin) {
+	if (GPIO_Pin == SW1_Pin) {
+		htim2.Instance->CCR1 = 100 - 1;
+		htim2.Instance->CCR2 = 100 - 1;
+	}
+	if (GPIO_Pin == SW2_Pin) {
+		htim2.Instance->CCR1 = 25 - 1;
+	}
+	if (GPIO_Pin == SW3_Pin) {
+		htim2.Instance->CCR2 = 50 - 1;
+	}
+	if (GPIO_Pin == SW4_Pin) {
+		htim2.Instance->CCR2 = 12 - 1;
+	}
 }
 /* USER CODE END 4 */
 
@@ -331,11 +351,10 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin){
 void Error_Handler(void)
 {
   /* USER CODE BEGIN Error_Handler_Debug */
-  /* User can add his own implementation to report the HAL error return state */
-  __disable_irq();
-  while (1)
-  {
-  }
+	/* User can add his own implementation to report the HAL error return state */
+	__disable_irq();
+	while (1) {
+	}
   /* USER CODE END Error_Handler_Debug */
 }
 
