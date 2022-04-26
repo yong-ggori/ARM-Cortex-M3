@@ -25563,3 +25563,4 @@ Caused by: javax.crypto.AEADBadTagException: Tag mismatch!
 2022-04-26 20:35:01,537 [INFO] ProjectBuilder:4183 - Time for Generating toolchain IDE Files: 921mS.
 2022-04-26 20:35:01,538 [INFO] ProjectBuilder:2785 - Time for Copy CMSIS : 0mS.
 2022-04-26 20:35:01,540 [INFO] ProjectBuilder:2785 - Time for Copy CMSIS : 0mS.
+2022-04-27 08:55:33,362 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 
