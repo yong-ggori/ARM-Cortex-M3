@@ -20318,3 +20318,7 @@ Caused by: javax.crypto.AEADBadTagException: Tag mismatch!
 2022-04-25 14:40:38,822 [INFO] ProjectBuilder:2785 - Time for Copy CMSIS : 0mS.
 2022-04-25 14:40:38,822 [INFO] ProjectBuilder:2785 - Time for Copy CMSIS : 0mS.
 2022-04-26 09:21:27,552 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 
+2022-04-26 09:36:22,121 [INFO] Activator:177 - 
+
+
+2022-04-26 09:36:22,122 [INFO] Activator:178 - !SESSION log4j initialized
