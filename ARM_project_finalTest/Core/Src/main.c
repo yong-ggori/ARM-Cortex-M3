@@ -401,7 +401,7 @@ int main(void) {
 
 		LEDColorByTemp(Temperature); //LED display
 
-		waterLevel = MAX_WATER_LEVEL - dis;
+		waterLevel = FISH_BOWL_HEIGHT - dis;
 		displayLCD(waterLevel, Temperature); //LCD display
 		setWaterPump(waterLevel); //set water pump
 
