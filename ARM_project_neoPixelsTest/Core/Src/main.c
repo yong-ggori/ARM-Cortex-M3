@@ -195,7 +195,7 @@ int main(void)
   MX_ADC1_Init();
   MX_I2C1_Init();
   /* USER CODE BEGIN 2 */
-	Set_LED(0, 255, 0, 0);
+/*	Set_LED(0, 255, 0, 0);
 	Set_LED(1, 0, 255, 0);
 	Set_LED(2, 0, 0, 255);
 
@@ -211,7 +211,7 @@ int main(void)
 	Set_LED(9, 0, 255, 0);
 	Set_LED(10, 0, 0, 255);
 
-	Set_LED(11, 46, 89, 128);
+	Set_LED(11, 46, 89, 128);*/
 
 //	Set_Brightness(45);
 //	WS2812_Send();
